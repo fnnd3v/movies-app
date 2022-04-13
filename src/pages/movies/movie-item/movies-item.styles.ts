@@ -10,6 +10,7 @@ export const StyledMovieItem = styled.li`
   margin: 20px 0;
   border: 1px solid ${({ theme }) => theme.colors.mainDarker};
   cursor: pointer;
+  overflow: hidden;
 
   span {
     color: ${({ theme }) => theme.colors.softGrey};
@@ -31,6 +32,7 @@ export const StyledPoster = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+
   img {
     height: 100%;
     width: 130px;
@@ -41,6 +43,8 @@ export const StyledPoster = styled.div`
     position: absolute;
     bottom: 0;
     padding: 10px;
+    max-height: 100%;
+    font-size: 14px;
   }
 
   ${({ theme }) => theme.mq.desktop} {

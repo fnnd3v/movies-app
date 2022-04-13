@@ -15,4 +15,5 @@ export interface MovieModel {
   video: boolean;
   vote_average: string;
   vote_count: string;
+  isFavorite?: boolean;
 }

@@ -8,6 +8,7 @@ import {
   Backdrop,
   ContentWrapper,
   Details,
+  FavoriteMovie,
   Overview,
   Rating,
   ReleaseDate,
@@ -18,15 +19,15 @@ import {
 import StarIcon from "assets/icons/star_icon.svg";
 import { getImageBackground, getImagePoster } from "utils";
 import { Loader } from "components";
+import { useFavoriteMovies } from "hooks/use-favorite-movies";
 
 const MovieDetailsPage = () => {
   const { id } = useParams();
 
+  const [isFavorite, setIsFavorite] = useState<boolean>(false);
   const [movieId, setMovieId] = useState<string>(id || "");
 
-  useEffect(() => {
-    if (id) setMovieId(id);
-  }, [id]);
+  const { toggleFavoriteMovie, checkIsFavorite } = useFavoriteMovies();
 
   const {
     data: movie,
@@ -36,8 +37,22 @@ const MovieDetailsPage = () => {
     isSuccess,
   } = useGetMovieDetailsQuery(movieId);
 
+  useEffect(() => {
+    if (id) setMovieId(id);
+  }, [id]);
+
+  useEffect(() => {
+    isSuccess && movie && checkIsFavorite(movie, setIsFavorite);
+  }, [movie, isSuccess]);
+
+  const handleFavoriteMovie = () => {
+    setIsFavorite((prevState) => !prevState);
+    toggleFavoriteMovie(movie);
+  };
+
   return (
     <Wrapper>
+      <FavoriteMovie onClick={handleFavoriteMovie} isFavorite={isFavorite} />
       <SimilarVideos movieId={movieId} />
       {isLoading && isFetching && <Loader />}
       {isError && <p>error</p>}

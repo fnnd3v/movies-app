@@ -1,3 +1,5 @@
+import { MovieModel } from "models";
+
 export interface MovieItemProps {
-  movie: any;
+  movie: MovieModel;
 }

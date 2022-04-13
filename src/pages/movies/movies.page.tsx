@@ -46,7 +46,7 @@ const MoviesPage = () => {
         {isLoading && isFetching && <Loader />}
         {isError && <p>unfortunately, something went wrong</p>}
         {isSuccess &&
-          movies.results.map((movie: any) => {
+          movies.results.map((movie) => {
             return <MovieItem key={movie.id} movie={movie} />;
           })}
       </ContentWrapper>

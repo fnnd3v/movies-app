@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
+import FavoriteIconBlack from "assets/icons/favorite_movie_icon_black.svg";
+import FavoriteIcon from "assets/icons/favorite_movie_icon.svg";
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
+  position: relative;
   align-items: center;
   ${({ theme }) => theme.mq.desktop} {
     flex-direction: row;
@@ -43,8 +47,8 @@ export const Backdrop = styled.div`
     text-align: center;
     font-size: 24px;
     padding: 0 10px;
-    max-width: 40%;
-    z-index: 999999;
+    max-width: 75%;
+    z-index: 9999;
   }
 
   ${({ theme }) => theme.mq.desktop} {
@@ -129,4 +133,17 @@ export const Rating = styled.div`
     height: 65px;
     opacity: 0.45;
   }
+`;
+
+export const FavoriteMovie = styled.div<{ isFavorite: boolean }>`
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* background-color: #fff; */
+  z-index: 9999;
+  background-image: url(${({ isFavorite }) => {
+    return isFavorite ? FavoriteIcon : FavoriteIconBlack;
+  }});
 `;

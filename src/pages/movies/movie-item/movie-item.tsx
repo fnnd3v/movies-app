@@ -35,6 +35,7 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
       <AboutInfo>
         <h4>{title}</h4>
         <span>{releaseDate}</span>
+
         <Rating>
           <div>
             <img src={StarIcon} alt="star" />

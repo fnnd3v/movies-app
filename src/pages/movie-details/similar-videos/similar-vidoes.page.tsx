@@ -4,12 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 import { StyledItem, StyledList, Wrapper } from "./similar-videos.styles";
 import { Loader } from "components";
+import { SimilarVIdeosProps } from "./similar-videos.types";
 
-interface SimilarVideosProps {
-  movieId: string;
-}
-
-const SimilarVideos: React.FC<SimilarVideosProps> = ({ movieId }) => {
+const SimilarVideos: React.FC<SimilarVIdeosProps> = ({ movieId }) => {
   const {
     data: similarVideos,
     isSuccess,

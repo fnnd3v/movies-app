@@ -1,5 +1,7 @@
+import { RouteConfig } from "models";
+
 /* omit bierze całość RouteConfig i wywala property component */
-type Route = Omit<any, "component">;
+type Route = Omit<RouteConfig, "component">;
 
 export const MOVIES_PAGE: Route = {
   path: "/movies",
@@ -22,5 +24,11 @@ export const FAVORITE_MOVIES_PAGE: Route = {
 export const MOST_POPULAR_MOVIES_PAGE: Route = {
   path: "/most-popular-movies",
   name: "Most popular movies",
+  showNavigation: true,
+};
+
+export const DEFAULT_PAGE: Route = {
+  path: "*",
+  name: "default",
   showNavigation: true,
 };
