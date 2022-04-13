@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import SimilarVideos from "./similar-videos/similar-vidoes.page";
 import { useGetMovieDetailsQuery } from "store";
 
 import {
@@ -16,7 +17,7 @@ import {
 
 import StarIcon from "assets/icons/star_icon.svg";
 import { getImageBackground, getImagePoster } from "utils";
-import SimilarVideos from "./similar-videos/similar-vidoes.page";
+import { Loader } from "components";
 
 const MovieDetailsPage = () => {
   const { id } = useParams();
@@ -38,6 +39,7 @@ const MovieDetailsPage = () => {
   return (
     <Wrapper>
       <SimilarVideos movieId={movieId} />
+      {isLoading && isFetching && <Loader />}
       {isError && <p>error</p>}
       {isSuccess && movie && (
         <ContentWrapper>

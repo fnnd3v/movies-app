@@ -3,6 +3,7 @@ import { TextField } from "@mui/material";
 import { skipToken } from "@reduxjs/toolkit/dist/query";
 
 import { useGetSearchingMovieQuery } from "store";
+import { Loader } from "components";
 import MovieItem from "./movie-item/movie-item";
 
 import { ContentWrapper, Wrapper } from "./movies.styles";
@@ -42,6 +43,7 @@ const MoviesPage = () => {
       />
 
       <ContentWrapper>
+        {isLoading && isFetching && <Loader />}
         {isError && <p>unfortunately, something went wrong</p>}
         {isSuccess &&
           movies.results.map((movie: any) => {

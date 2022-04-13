@@ -30,13 +30,17 @@ export const StyledPoster = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   img {
     height: 100%;
     width: 130px;
   }
 
   p {
-    display: none;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
   }
 
   ${({ theme }) => theme.mq.desktop} {
@@ -44,6 +48,20 @@ export const StyledPoster = styled.div`
     img {
       height: 450px;
       width: 100%;
+      transition: opacity 0.2s;
+    }
+
+    p {
+      transition: opacity 0.2s;
+    }
+
+    &:hover {
+      img {
+        opacity: 0.2;
+      }
+      p {
+        opacity: 1;
+      }
     }
   }
 `;

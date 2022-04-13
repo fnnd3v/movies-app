@@ -3,6 +3,7 @@ import { useGetSimilarVideosQuery } from "store";
 import { useNavigate } from "react-router-dom";
 
 import { StyledItem, StyledList, Wrapper } from "./similar-videos.styles";
+import { Loader } from "components";
 
 interface SimilarVideosProps {
   movieId: string;
@@ -31,6 +32,7 @@ const SimilarVideos: React.FC<SimilarVideosProps> = ({ movieId }) => {
     <Wrapper>
       <h4>check similar videos</h4>
       <StyledList>
+        {isLoading && isFetching && <Loader />}
         {isError && <p>unfortunately, something went wrong</p>}
         {isSuccess &&
           similarVideos.results.map((movie: any) => {
