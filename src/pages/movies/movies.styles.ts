@@ -24,7 +24,7 @@ export const ContentWrapper = styled.ul`
   width: 100%;
   margin-top: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   list-style: none;
   display: flex;
@@ -34,9 +34,6 @@ export const ContentWrapper = styled.ul`
   ${({ theme }) => theme.mq.desktop} {
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 50px;
-    justify-content: space-evenly;
-    align-items: center;
   }
 `;
 

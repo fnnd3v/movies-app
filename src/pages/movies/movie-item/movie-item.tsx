@@ -3,7 +3,13 @@ import React from "react";
 import { getImagePoster } from "utils";
 import { MovieItemProps } from "./movie-item.types";
 
-import { MovieDetails, Rating, StyledMovieItem } from "./movies-item.styles";
+import {
+  AboutInfo,
+  MovieDetails,
+  Rating,
+  StyledMovieItem,
+  StyledPoster,
+} from "./movies-item.styles";
 
 import StarIcon from "assets/icons/star_icon.svg";
 
@@ -15,12 +21,16 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
     vote_average: voteAverage,
     vote_count: voteCount,
     popularity,
+    overview,
   } = movie;
 
   return (
     <StyledMovieItem>
-      <img src={getImagePoster(posterPath)} alt="movie poster" />
-      <MovieDetails>
+      <StyledPoster>
+        <img src={getImagePoster(posterPath, 500)} alt="movie poster" />
+        <p>{overview}</p>
+      </StyledPoster>
+      <AboutInfo>
         <h4>{title}</h4>
         <span>{releaseDate}</span>
         <Rating>
@@ -31,14 +41,14 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
           <p>
             {voteCount}
             <br />
-            <span>votes</span>
+            <span>vostes</span>
           </p>
         </Rating>
         <p>
           <span>popularity: </span>
           {popularity}
         </p>
-      </MovieDetails>
+      </AboutInfo>
     </StyledMovieItem>
   );
 };
