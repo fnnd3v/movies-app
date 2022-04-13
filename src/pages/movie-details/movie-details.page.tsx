@@ -16,6 +16,7 @@ import {
 
 import StarIcon from "assets/icons/star_icon.svg";
 import { getImageBackground, getImagePoster } from "utils";
+import SimilarVideos from "./similar-videos/similar-vidoes.page";
 
 const MovieDetailsPage = () => {
   const { id } = useParams();
@@ -36,6 +37,7 @@ const MovieDetailsPage = () => {
 
   return (
     <Wrapper>
+      <SimilarVideos movieId={movieId} />
       {isError && <p>error</p>}
       {isSuccess && movie && (
         <ContentWrapper>
