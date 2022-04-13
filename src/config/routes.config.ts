@@ -1,7 +1,7 @@
 import FavoriteMoviesPage from "pages/favorite-movies/favorite-movies.page";
 import MostPopularMoviesPage from "pages/most-popular-movies/most-popular-movies.page";
 import MovieDetailsPage from "pages/movie-details/movie-details.page";
-import MoviesPage from "pages/movies/movies-page";
+import MoviesPage from "pages/movies/movies.page";
 
 import {
   FAVORITE_MOVIES_PAGE,
