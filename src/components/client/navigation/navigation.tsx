@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { StyledNav, StyledNavLink } from "./navigation.styles";
 
-const Navigation = () => {
+export const Navigation = () => {
   return (
     <StyledNav>
       <StyledNavLink to="/movies">movies</StyledNavLink>
@@ -11,5 +11,3 @@ const Navigation = () => {
     </StyledNav>
   );
 };
-
-export default Navigation;

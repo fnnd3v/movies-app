@@ -1,9 +1,8 @@
 import React from "react";
-
-import { Providers } from "components";
 import { Route, Routes } from "react-router-dom";
-import { routes } from "config/routes.config";
-import { PageRoute } from "components/client/page-route/page-route";
+
+import { PageRoute, Providers } from "components";
+import { routes } from "config";
 
 const App = () => {
   return (

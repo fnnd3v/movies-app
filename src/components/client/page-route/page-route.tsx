@@ -1,7 +1,6 @@
-import { Container } from "components/container/container";
 import React from "react";
 
-import Navigation from "../navigation/navigation";
+import { Container, Navigation } from "components";
 
 export const PageRoute: React.FC<any> = ({
   component: Component,
