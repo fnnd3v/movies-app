@@ -1,5 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 import { BASE_URL } from "config";
+import { MovieModel } from "models";
+import { MovieResponse } from "./movies.types";
 
 const BASE_QUERY_PARAMS = {
   api_key: "5fd6d1ff3424ace0b8fe52aa5b9834fd",
@@ -10,7 +12,7 @@ export const moviesApi = createApi({
     baseUrl: BASE_URL,
   }),
   endpoints: (builder) => ({
-    getTopRatedMovies: builder.query<any, number>({
+    getTopRatedMovies: builder.query<MovieResponse, number>({
       query: (page) => {
         return {
           url: `movie/top_rated`,
@@ -21,7 +23,7 @@ export const moviesApi = createApi({
         };
       },
     }),
-    getSearchingMovie: builder.query<any, string>({
+    getSearchingMovie: builder.query<MovieResponse, string>({
       query: (movie) => {
         return {
           url: `/search/movie`,
@@ -34,7 +36,7 @@ export const moviesApi = createApi({
         };
       },
     }),
-    getMovieDetails: builder.query<any, string>({
+    getMovieDetails: builder.query<MovieModel, string>({
       query: (movieId: string | null) => {
         return {
           url: `/movie/${movieId}`,
@@ -42,7 +44,7 @@ export const moviesApi = createApi({
         };
       },
     }),
-    getSimilarVideos: builder.query<any, string>({
+    getSimilarVideos: builder.query<MovieResponse, string>({
       query: (movieId: string | null) => {
         return {
           url: `/movie/${movieId}/similar`,
