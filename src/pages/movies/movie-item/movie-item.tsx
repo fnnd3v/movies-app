@@ -5,13 +5,13 @@ import { MovieItemProps } from "./movie-item.types";
 
 import {
   AboutInfo,
-  MovieDetails,
   Rating,
-  StyledMovieItem,
+  StyledLink,
   StyledPoster,
 } from "./movies-item.styles";
 
 import StarIcon from "assets/icons/star_icon.svg";
+import { MOVIE_DETAILS_PAGE } from "constants/routes.constants";
 
 const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
   const {
@@ -24,10 +24,12 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
     overview,
   } = movie;
 
+  const moviePath = MOVIE_DETAILS_PAGE.path.replace(":id", movie.id.toString());
+
   return (
-    <StyledMovieItem>
+    <StyledLink to={moviePath}>
       <StyledPoster>
-        <img src={getImagePoster(posterPath, 500)} alt="movie poster" />
+        <img src={getImagePoster(posterPath, 300)} alt="movie poster" />
         <p>{overview}</p>
       </StyledPoster>
       <AboutInfo>
@@ -49,7 +51,7 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
           {popularity}
         </p>
       </AboutInfo>
-    </StyledMovieItem>
+    </StyledLink>
   );
 };
 

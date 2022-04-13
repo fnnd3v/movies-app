@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Link } from "react-router-dom";
+
 export const StyledMovieItem = styled.li`
   width: 100%;
   height: 200px;
@@ -30,6 +32,7 @@ export const StyledPoster = styled.div`
   align-items: center;
   img {
     height: 100%;
+    width: 130px;
   }
 
   p {
@@ -63,23 +66,47 @@ export const Rating = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+
+  p {
+    text-align: center;
+  }
+
   div {
     display: flex;
     justify-content: center;
     align-items: center;
     img {
       margin-right: 5px;
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
     }
   }
 
   ${({ theme }) => theme.mq.desktop} {
     justify-content: space-around;
-    p {
-      text-align: center;
-    }
   }
 `;
 
-export const MovieDetails = styled.div``;
+export const StyledLink = styled(Link)`
+  color: unset;
+  text-decoration: none;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  border: 1px solid ${({ theme }) => theme.colors.mainDarker};
+  cursor: pointer;
+
+  span {
+    color: ${({ theme }) => theme.colors.softGrey};
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    width: 22%;
+    margin: 20px 10px;
+    height: 610px;
+    flex-direction: column;
+    min-width: 300px;
+  }
+`;

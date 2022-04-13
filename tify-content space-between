@@ -1,0 +1,29 @@
+[33mcommit 8a61eb616fd114513180a0ec5068cbed8cc6281c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Jachym <jachympatryk99@gmail.com>
+Date:   Wed Apr 13 16:16:49 2022 +0200
+
+    searching movies and mobile view
+
+[33mcommit 907129299d1d01ca19ad8ad9027d93b8798c6fa6[m
+Author: Jachym <jachympatryk99@gmail.com>
+Date:   Wed Apr 13 15:36:46 2022 +0200
+
+    add store
+
+[33mcommit a46b1696c08230034d453f5fd551431b84cf4393[m
+Author: Jachym <jachympatryk99@gmail.com>
+Date:   Wed Apr 13 15:14:18 2022 +0200
+
+    add naviagtion and implement router
+
+[33mcommit 2b409ad841b4a972127dc059b36cab5df3500196[m
+Author: Jachym <jachympatryk99@gmail.com>
+Date:   Wed Apr 13 14:40:40 2022 +0200
+
+    install extensions and project structure
+
+[33mcommit 87ee865251bce552988ca72ca3c1ed58e59fce24[m
+Author: Jachym <jachympatryk99@gmail.com>
+Date:   Wed Apr 13 14:22:16 2022 +0200
+
+    Initialize project using Create React App
