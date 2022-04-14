@@ -146,4 +146,9 @@ export const FavoriteMovie = styled.div<{ isFavorite: boolean }>`
   background-image: url(${({ isFavorite }) => {
     return isFavorite ? FavoriteIcon : FavoriteIconBlack;
   }});
+
+  ${({ theme }) => theme.mq.desktop} {
+    right: 10%;
+    top: 40px;
+  }
 `;

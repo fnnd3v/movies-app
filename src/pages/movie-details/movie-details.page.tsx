@@ -52,12 +52,15 @@ const MovieDetailsPage = () => {
 
   return (
     <Wrapper>
-      <FavoriteMovie onClick={handleFavoriteMovie} isFavorite={isFavorite} />
       <SimilarVideos movieId={movieId} />
       {isLoading && isFetching && <Loader />}
       {isError && <p>error</p>}
       {isSuccess && movie && (
         <ContentWrapper>
+          <FavoriteMovie
+            onClick={handleFavoriteMovie}
+            isFavorite={isFavorite}
+          />
           <Backdrop>
             <img
               src={getImageBackground(movie.backdrop_path)}

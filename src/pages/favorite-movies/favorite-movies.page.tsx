@@ -1,60 +1,23 @@
-import { MOVIE_DETAILS_PAGE } from "constants/routes.constants";
-import { MovieModel } from "models";
 import React from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { getImagePoster } from "utils";
+import { MovieModel } from "models";
 
-const Wrapper = styled.ul`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+import FavoriteMovieItem from "./favorite-movie-item/favorite-movie-item";
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  width: 90%;
-  height: 250px;
-  margin: 20px 0;
-  color: white;
-  background-color: ${({ theme }) => theme.colors.mainDarker};
-  display: flex;
-
-  align-items: center;
-
-  img {
-    height: 100%;
-  }
-
-  p {
-    padding: 10px;
-  }
-`;
+import { Wrapper } from "./favorite-movies.page.styles";
 
 const FavoriteMoviesPage = () => {
   const favoriteMoviesState = useSelector((state: any) => state.favoriteMovies);
 
-  const moviePath = (id: number) =>
-    MOVIE_DETAILS_PAGE.path.replace(":id", id.toString());
-
   return (
     <Wrapper>
-      {favoriteMoviesState
-        ? favoriteMoviesState.map((movie: MovieModel) => {
-            return (
-              <StyledLink to={moviePath(movie.id)} key={movie.id}>
-                <img
-                  src={getImagePoster(movie.poster_path, 200)}
-                  alt="movie poster"
-                />
-                <p>{movie.title}</p>
-              </StyledLink>
-            );
-          })
-        : null}
+      {favoriteMoviesState.length !== 0 ? (
+        favoriteMoviesState.map((movie: MovieModel) => {
+          return <FavoriteMovieItem key={movie.id} movie={movie} />;
+        })
+      ) : (
+        <p>add your first movie</p>
+      )}
     </Wrapper>
   );
 };

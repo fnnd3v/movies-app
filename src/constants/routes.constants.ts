@@ -4,7 +4,7 @@ import { RouteConfig } from "models";
 type Route = Omit<RouteConfig, "component">;
 
 export const MOVIES_PAGE: Route = {
-  path: "/movies",
+  path: "*",
   name: "Movies",
   showNavigation: true,
 };

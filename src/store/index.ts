@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { moviesApi } from "./api/movies";
 
@@ -10,10 +10,10 @@ const favoriteMoviesSlice = createSlice({
   name: "favoriteMovies",
   initialState: initialState,
   reducers: {
-    addMovieToFavorite(state, action) {
+    addMovieToFavorite(state, action: PayloadAction<MovieModel>) {
       state.push(action.payload);
     },
-    removeMovieFromFavorite(state, action) {
+    removeMovieFromFavorite(state, action: PayloadAction<number>) {
       return state.filter((movie) => movie.id !== action.payload);
     },
   },
