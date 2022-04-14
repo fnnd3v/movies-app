@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 import { MovieResponse } from "./movies.types";
 import { BASE_URL } from "config";
 import { MovieModel } from "models";
-import { environment } from "config/environment";
+import { environment } from "config/environment.config";
 
 const BASE_QUERY_PARAMS = {
   api_key: environment.MOVIESDB_KEY,

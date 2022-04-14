@@ -1,6 +1,6 @@
-import { MovieModel } from "models";
 import { useDispatch, useSelector } from "react-redux";
 import { addMovieToFavorite, removeMovieFromFavorite } from "store";
+import { MovieModel } from "models";
 
 export const useFavoriteMovies = () => {
   const favoriteMoviesState = useSelector((state: any) => state.favoriteMovies);
@@ -19,7 +19,7 @@ export const useFavoriteMovies = () => {
   };
 
   const checkIsFavorite = (
-    movie: any,
+    movie: MovieModel,
     setIsFavorite: React.Dispatch<React.SetStateAction<boolean>>
   ) => {
     if (favoriteMoviesState.length === 0) return setIsFavorite(false);

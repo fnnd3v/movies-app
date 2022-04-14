@@ -1,3 +1,3 @@
 export * from "./routes.config";
 export * from "./api.config";
-export * from "./environment";
+export * from "./environment.config";
