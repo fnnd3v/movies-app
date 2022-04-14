@@ -7,7 +7,10 @@ import FavoriteMovieItem from "./favorite-movie-item/favorite-movie-item";
 import { Wrapper } from "./favorite-movies.page.styles";
 
 const FavoriteMoviesPage = () => {
-  const favoriteMoviesState = useSelector((state: any) => state.favoriteMovies);
+  //root state type
+  const favoriteMoviesState = useSelector<any, MovieModel[]>(
+    (state) => state.favoriteMovies
+  );
 
   return (
     <Wrapper>
