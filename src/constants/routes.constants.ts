@@ -1,6 +1,5 @@
 import { RouteConfig } from "models";
 
-/* omit bierze całość RouteConfig i wywala property component */
 type Route = Omit<RouteConfig, "component">;
 
 export const MOVIES_PAGE: Route = {
